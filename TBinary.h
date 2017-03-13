@@ -113,12 +113,12 @@ public:
 	// Если элемента в дереве не найдено, то функция генерирует исключение TNotFoundException
 	TNode * Find(const value_type & value)
 	{
-		TNode* CurrentNode;
-		CurrentNode = Root;
 		if (Root == nullptr)
 		{
 			throw TNotFoundException("Root is nullptr");
 		}
+		TNode* CurrentNode;
+		CurrentNode = Root;
 		while (CurrentNode)
 		{
 			if (CurrentNode->Data == value)
@@ -129,7 +129,7 @@ public:
 			{
 				CurrentNode = CurrentNode->Right;
 			}
-			else
+			else if (CurrentNode->Data > value)
 			{
 				CurrentNode = CurrentNode->Left;
 			}
