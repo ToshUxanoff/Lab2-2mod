@@ -133,10 +133,7 @@ public:
 				curNode = curNode->Left;
 			}
 		}
-		if (curNode == nullptr)
-		{
-			throw TNotFoundException("Element is not found");
-		}
+		throw TNotFoundException("Element is not found");
 		return nullptr;
 	}
 
